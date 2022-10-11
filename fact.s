@@ -14,7 +14,7 @@ fact:
 	mov	x29, sp
 	cmp	x0, 1
 	beq	.EQ
-	str	x0, [sp]
+//	str	x0, [sp]
 	sub	x0, x0, 1
 	bl	fact
 	ldr	x1, [sp]
