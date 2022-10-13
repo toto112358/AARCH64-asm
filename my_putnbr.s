@@ -15,7 +15,7 @@ my_putnbr:
 	mov	x9, 10
 	bge	.POSITIVE
 
-// NEGATIVE NUmBER
+// NEGATIVE NUMBER
 	neg	x0, x0
 	//str	x0, [sp, -16]!
 	stp	x0, x9, [sp, -16]!
