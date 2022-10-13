@@ -1,12 +1,6 @@
 .text
-.globl _start
-
-_start:
-	mov	x0, 4
-	bl	fact
-// EXIT
-	mov	x8, 93
-	svc	0
+.globl	fact
+.type	fact, %function
 
 fact:
 	stp	x29, x30, [sp, -16]!

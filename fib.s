@@ -1,12 +1,6 @@
 .text
-.globl _start
-
-_start:
-	mov	x0, 0
-	bl	fib
-// EXIT
-	mov	x8, 93
-	svc	0
+.globl	fib
+.type	fib, %function
 
 fib:
 	stp	x29, x30, [sp, -16]!
