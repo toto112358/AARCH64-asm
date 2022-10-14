@@ -1,20 +1,16 @@
-.text
-.globl	fact
+.global	fact
 .type	fact, %function
 
 fact:
-	stp	x29, x30, [sp, -16]!
-	stp	x0, xzr, [sp, -16]!
+	stp	x29, x30, [sp, -32]!
 	mov	x29, sp
+	str	x0, [sp, 16]
 	cmp	x0, 1
-	beq	.EQ
-//	str	x0, [sp]
+	beq	.END
 	sub	x0, x0, 1
 	bl	fact
-	ldr	x1, [sp]
-	mul	x0, x1, x0
-	str	x0, [sp]
-.EQ:
-	ldp	x0, xzr, [sp], 16
-	ldp	x29, x30, [sp], 16
+	ldr	x9, [sp, 16]
+	mul	x0, x9, x0
+.END:
+	ldp	x29, x30, [sp], 32
 	ret
